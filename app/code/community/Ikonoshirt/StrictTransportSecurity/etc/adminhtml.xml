@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ikonoshirt_htst translate="title" module="ikonoshirt_stricttransportsecurity">
+                                        <title>HTST Settings</title>
+                                        <sort_order>130</sort_order>
+                                    </ikonoshirt_htst>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
