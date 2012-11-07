@@ -21,7 +21,7 @@ class Ikonoshirt_StrictTransportSecurity_Model_Observer
         $adminSession = Mage::getSingleton('admin/session');
 
         $abort = false;
-        if (strpos($secureBaseUrl, 'https://') !== 0) {
+        if (stripos($secureBaseUrl, 'https://') !== 0) {
             $message = 'HTTP Strict Transport Security activated, but secure base url not HTTPS.';
 
             Mage::log($message);
@@ -30,7 +30,7 @@ class Ikonoshirt_StrictTransportSecurity_Model_Observer
             $abort = true;
         }
 
-        if (!strpos($unSecureBaseUrl, 'https://') !== 0) {
+        if (stripos($unSecureBaseUrl, 'https://') !== 0) {
             $message = 'HTTP Strict Transport Security activated, but unsecure base url not HTTPS.';
 
             Mage::log($message);
@@ -42,11 +42,9 @@ class Ikonoshirt_StrictTransportSecurity_Model_Observer
         if ($abort) {
             return;
         }
-        die('not aborted');
 
         /* @var $request Mage_Core_Controller_Request_Http */
         $request = $controllerAction->getRequest();
-
         $response = $controllerAction->getResponse();
 
         // check wether we use STS and if we are on https
