@@ -1,7 +1,6 @@
 {
     "name": "ikonoshirt/strict-transport-security",
     "type": "magento-module",
-    "version": "0.1.0",
     "description": "STS - Strict Transport Security support for Magento",
     "license": "OSL-3.0",
     "authors": [
